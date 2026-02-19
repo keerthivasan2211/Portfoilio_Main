@@ -22,13 +22,16 @@ export default function Hero() {
           scalability, and real business impact.
         </>
       ),
-      dashboard: {
-        items: [
-          "Frontend Performance Optimized",
-          "Backend Services Running",
-          "Database Indexed & Secure",
-        ],
-      },
+      metrics: [
+        "API Latency: 118ms",
+        "Uptime: 99.99%",
+        "Active Users: 1.4k+",
+        "MongoDB Indexed",
+        "JWT Auth Secured",
+        "Node Services Running",
+        "Cache Optimized",
+        "CI/CD Pipeline Active",
+      ],
     },
     {
       title: "CRM & Integration Developer",
@@ -46,13 +49,16 @@ export default function Hero() {
           and reduce operational overhead for growing businesses.
         </>
       ),
-      dashboard: {
-        items: [
-          "WooCommerce Sync Active",
-          "Shopify Sync Active",
-          "CRM Automation Running",
-        ],
-      },
+      metrics: [
+        "WooCommerce Sync: Active",
+        "Shopify Sync: Active",
+        "HubSpot Automation Running",
+        "Data Sync Accuracy: 99%",
+        "Webhook Listeners Active",
+        "CRM Workflow Triggered",
+        "API Rate Limit Optimized",
+        "Multi-Tenant Enabled",
+      ],
     },
     {
       title: "AI & Automation Enthusiast",
@@ -66,13 +72,16 @@ export default function Hero() {
           through intelligent workflows and smart API integrations.
         </>
       ),
-      dashboard: {
-        items: [
-          "Workflow Intelligence Active",
-          "Prediction Model Running",
-          "Smart Decision Engine Enabled",
-        ],
-      },
+      metrics: [
+        "Prediction Model Running",
+        "Workflow Intelligence Active",
+        "Automation Accuracy: 96%",
+        "Smart Decision Engine Enabled",
+        "Task Reduction: 60%",
+        "API Orchestration Layer Active",
+        "Real-time Data Processing",
+        "AI Optimization Stable",
+      ],
     },
   ];
 
@@ -89,28 +98,21 @@ export default function Hero() {
     <section className="min-h-screen flex items-center px-8">
       <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center">
 
-        {/* ================= LEFT SIDE ================= */}
+        {/* LEFT SIDE */}
         <div className="text-left space-y-6">
 
-          {/* Small Intro Tag */}
-          <p className="text-sm uppercase tracking-widest text-[var(--accent-9)] font-medium">
-            {/* Professional & Innovative Developer */}
-          </p>
-
-          {/* Name */}
           <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
             Keerthivasan{" "}
             <span className="text-[var(--accent-9)]">S</span>
           </h1>
 
-          {/* Dynamic Role */}
           <AnimatePresence mode="wait">
             <motion.div
               key={currentRole}
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -40 }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
+              transition={{ duration: 0.6 }}
               className="min-h-[160px]"
             >
               <h2 className="text-2xl font-semibold mb-4 text-[var(--accent-10)]">
@@ -123,18 +125,11 @@ export default function Hero() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Skill Summary */}
           <p className="text-sm text-[var(--gray-10)]">
             Specialized in React, Node.js, MongoDB, CRM integrations,
             REST APIs, and scalable system architecture.
           </p>
 
-          {/* Status */}
-          <p className="text-sm font-medium text-[var(--accent-9)]">
-            {/* 🚀 Open to Full-Time Roles & Freelance Opportunities */}
-          </p>
-
-          {/* Buttons */}
           <div className="flex flex-wrap gap-4 pt-2">
             <a
               href="#contact"
@@ -162,56 +157,79 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ================= RIGHT SIDE ================= */}
+        {/* RIGHT SIDE */}
         <div className="relative flex justify-center items-center">
 
           <AnimatePresence mode="wait">
             <motion.div
               key={currentRole}
-              initial={{ opacity: 0, scale: 0.85 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.85 }}
-              transition={{ duration: 0.6 }}
-              className="relative w-[380px] h-[380px] flex items-center justify-center"
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.5 }}
+              className="relative w-[420px] h-[420px] flex items-center justify-center"
             >
-              {/* Glowing Core */}
+
+              {/* Rotating Rings */}
               <motion.div
                 animate={{ rotate: 360 }}
-                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                className="absolute w-32 h-32 rounded-full bg-[var(--accent-3)] blur-2xl opacity-60"
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                className="absolute w-[380px] h-[380px] rounded-full border border-[var(--accent-6)] opacity-30"
               />
 
-              <div className="relative z-10 w-28 h-28 rounded-full bg-[var(--gray-2)] border border-[var(--gray-6)] flex items-center justify-center shadow-xl">
-                <span className="text-[var(--accent-9)] font-bold text-lg">
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                className="absolute w-[280px] h-[280px] rounded-full border border-[var(--accent-8)] opacity-40"
+              />
+
+              {/* Core */}
+              <div className="relative z-10 w-32 h-32 rounded-full 
+                bg-[var(--gray-2)] 
+                border border-[var(--gray-6)] 
+                flex flex-col items-center justify-center 
+                shadow-2xl">
+
+                <span className="text-[var(--accent-9)] font-bold text-lg text-center px-3">
                   {roles[currentRole].title.split(" ")[0]}
                 </span>
+
+                <p className="text-xs text-[var(--gray-10)] mt-1">
+                           </p>
               </div>
 
-              {roles[currentRole].dashboard.items.map((item, index) => (
+              {/* Dynamic Metrics */}
+              {roles[currentRole].metrics.map((item, index) => (
                 <motion.div
                   key={index}
-                  animate={{ y: [0, -10, 0] }}
+                  animate={{ y: [0, -8, 0] }}
                   transition={{
-                    duration: 4 + index,
+                    duration: 3 + index,
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
                   className={`
                     absolute
-                    ${index === 0 ? "top-2 left-1/2 -translate-x-1/2" : ""}
-                    ${index === 1 ? "bottom-4 left-6" : ""}
-                    ${index === 2 ? "bottom-4 -right-10" : ""}
-                    w-44 p-4 rounded-xl
+                    ${index === 0 ? "-top-5 left-1/2 -translate-x-1/2" : ""}
+                    ${index === 1 ? "-bottom-5 left-1/2 -translate-x-1/2" : ""}
+                    ${index === 2 ? "-left-10 top-1/2 -translate-y-1/2" : ""}
+                    ${index === 3 ? "-right-10 top-1/2 -translate-y-1/2" : ""}
+                    ${index === 4 ? "top-12 right-6" : ""}
+                    ${index === 5 ? "top-12 left-6" : ""}
+                    ${index === 6 ? "bottom-12 right-6" : ""}
+                    ${index === 7 ? "bottom-12 left-6" : ""}
+                    w-44 p-3 rounded-xl
                     bg-[var(--gray-2)]
                     border border-[var(--gray-6)]
-                    shadow-xl
+                    shadow-lg
                   `}
                 >
-                  <p className="text-sm text-[var(--gray-11)] text-center">
+                  <p className="text-xs text-[var(--gray-11)] text-center">
                     {item}
                   </p>
                 </motion.div>
               ))}
+
             </motion.div>
           </AnimatePresence>
 
