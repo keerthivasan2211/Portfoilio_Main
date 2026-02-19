@@ -24,3 +24,41 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* 3D Hover Effect */
+.hover-3d {
+  position: relative;
+  width: 24rem;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+}
+
+.hover-3d:hover {
+  transform: rotateX(6deg) rotateY(-6deg) scale(1.05);
+}
+
+.hover-3d figure {
+  overflow: hidden;
+}
+
+.hover-3d img {
+  transition: transform 0.4s ease;
+}
+
+.hover-3d:hover img {
+  transform: scale(1.1);
+}
+/* Hide scrollbar for Chrome, Safari and Edge */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE */
+  scrollbar-width: none;     /* Firefox */
+}
